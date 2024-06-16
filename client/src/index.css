@@ -11,3 +11,12 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.flip-vertical {
+  transform: scaleY(1); /* Initial state */
+  transition: transform 0.5s ease; /* Transition property and timing */
+}
+
+.flip-vertical.flip {
+  transform: scaleY(-1); /* Flipped state */
+}

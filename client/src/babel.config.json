@@ -1,0 +1,7 @@
+// babel.config.json (or equivalent)
+{
+    "plugins": [
+        
+  ["@babel/plugin-proposal-decorators", { "legacy": true }]
+    ]
+}

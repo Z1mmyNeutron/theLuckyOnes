@@ -1,13 +1,18 @@
 import React, { useState, useEffect } from "react";
 import "./App.css";
-import { test } from "./common/viewModel.ts";
+// import { NavbarViewModel, test } from "./common/viewModel.ts";
 import { makeAutoObservable, observable } from "mobx";
 import { observer } from "mobx-react";
 import { CardView, CardViewModel } from "./common/card.tsx";
+// import NavBar, { RouteView, RouteViewModel } from "./common/navbar.tsx";
 
 import "@cloudscape-design/global-styles/index.css" //cloudscape import
 
 import SpaceBetween from "@cloudscape-design/components/space-between";
+import { NavbarView } from "./common/navbar/navbarView.tsx";
+import { NavbarViewModel } from "./common/navbar/navbarViewModel.ts";
+import { Route } from "react-router-dom";
+import { About } from "./common/about.tsx";
 
 //make logic
 
@@ -57,12 +62,18 @@ function Link(href: string, text: string) {
   </a>
 }
 ///view
+
 function AppViewBuilder() {
-  return observer(({ viewModel }: { viewModel: AppViewModel }) => {
+  return observer(({ viewModel, navbar }: { viewModel: AppViewModel, navbar: NavbarViewModel }) => {
     return (
       <div className="App">
         <h1>
           <div style={{ alignItems: "horizontal" }}>
+            <NavbarView viewModel={navbar}></NavbarView>
+
+            {navbar.currentRoute === "/about" && <About></About>}
+
+
             <h1>Home Bar Place Holder</h1>
             <h2>The lucky ones</h2>
             <p>
@@ -82,9 +93,11 @@ function AppViewBuilder() {
 
 const AppView = AppViewBuilder();
 const appViewModel = new AppViewModel()
+const navbar = new NavbarViewModel();
 function App() {
 
-  return <AppView viewModel={appViewModel} />
+  return <AppView viewModel={appViewModel} navbar={navbar} />
+
 
 }
 

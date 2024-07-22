@@ -1,5 +1,3 @@
-// import { RouteViewModel } from "./navbar";
-
 class Person {
   constructor(public name: string) {}
 }

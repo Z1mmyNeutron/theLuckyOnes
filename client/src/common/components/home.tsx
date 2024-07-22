@@ -1,7 +1,7 @@
 import { makeAutoObservable } from "mobx";
 import { observer } from "mobx-react";
 import React from "react";
-// import { CardViewModel } from "../card";
+import "../components/home.css"
 
 type CardType = string | any;
 const map = new Map([
@@ -26,11 +26,8 @@ export class CardViewModel {
     back: CardType;
     cardViewModels: any;
 
-
-
     constructor(front: CardType, back: CardType) {
         makeAutoObservable(this);
-
         this.front = front
         this.back = back
     }
@@ -46,6 +43,7 @@ export class CardViewModel {
         return {
             transform: this.flip ? 'scaleY(-1)' : 'scaleY(1)',
             transition: 'transform 0.5s ease',
+            borderRadius: 5,
         };
     }
 }
@@ -59,7 +57,7 @@ function RenderCardType(value: CardType, style: any) {
 function CardViewBuilder() {
     return observer(({ viewModel }: { viewModel: CardViewModel }) => {
         return <div
-            style={{ ...viewModel.getFlipStyle, width: 300, height: 300, border: '1px solid black' }} onClick={() => {
+            style={{ ...viewModel.getFlipStyle, width: 300, height: 300, border: '1px solid black', paddingTop: '20%', }} onClick={() => {
                 viewModel.flip = !viewModel.flip
             }}>
             {RenderCardType(viewModel.cardFace, viewModel.getFlipStyle)}
@@ -72,7 +70,6 @@ export const CardView = CardViewBuilder();
 export class HomeViewModel {
     constructor() {
         makeAutoObservable(this);
-
     }
     cardViewModels: CardViewModel[] = [
         new CardViewModel("book1", "back"),
@@ -90,9 +87,11 @@ export class HomeViewModel {
 }
 export function HomeViewBuilder() {
     return observer(({ viewModel }: { viewModel: HomeViewModel }) => {
-        return <div style={{ margin: "10%", width: "80%", display: "grid", gridTemplateColumns: "1fr 1fr 1fr" }}>
+        return <div style={{
+            margin: "10%", width: "80%", display: "grid", gridTemplateColumns: "1fr 1fr 1fr"
+        }}>
             {viewModel.cardViewModels.map(card => <CardView viewModel={card} />)}
-        </div>
+        </div >
     }
     )
 }

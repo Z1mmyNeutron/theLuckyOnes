@@ -6,6 +6,7 @@ export class CardViewModel {
     flip: boolean = false
     front: CardType;
     back: CardType;
+    cardViewModels: any;
 
     constructor(front: CardType, back: CardType) {
         makeAutoObservable(this);
@@ -19,8 +20,6 @@ export class CardViewModel {
     }
 
     async init() {
-
-
     }
 
     get getFlipStyle() {

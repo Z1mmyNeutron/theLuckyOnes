@@ -1,3 +1,31 @@
 .Card{
     padding:'20%';
+    font-family: Georgia, 'Times New Roman', Times, serif;
 }
+p:hover{
+    color: rgb(255, 255, 255);
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+/* unvisited link */
+a:link {
+    color: white;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+  }
+  
+  /* visited link */
+  a:visited {
+    color: rgb(231, 231, 231);
+    font-family: Georgia, 'Times New Roman', Times, serif;
+  }
+  
+  /* mouse over link */
+  a:hover {
+    color: rgb(122, 31, 122);
+    font-family: Georgia, 'Times New Roman', Times, serif;
+  }
+  
+  /* selected link */
+  a:active {
+    color: white;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+  }

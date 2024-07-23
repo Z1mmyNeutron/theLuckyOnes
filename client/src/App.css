@@ -2,16 +2,19 @@
   text-align: center;
   background-color: black;
   color:white;
+  font-family: Georgia, 'Times New Roman', Times, serif;
 }
 
 .App-logo {
   height: 40vmin;
   pointer-events: none;
+  font-family: Georgia, 'Times New Roman', Times, serif;
 }
 
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
+    font-family: Georgia, 'Times New Roman', Times, serif;
   }
 }
 
@@ -24,10 +27,12 @@
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
+  font-family: Georgia, 'Times New Roman', Times, serif;
 }
 
 .App-link {
-  color: #61dafb;
+  color: #ffffff;
+  font-family: Georgia, 'Times New Roman', Times, serif;
 }
 
 @keyframes App-logo-spin {
@@ -37,4 +42,35 @@
   to {
     transform: rotate(360deg);
   }
+}
+p:hover{
+  color: rgb(255, 255, 255);
+  font-family: Georgia, 'Times New Roman', Times, serif;
+}
+/* unvisited link */
+a:link {
+  color: white;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+/* visited link */
+a:visited {
+  color: rgb(231, 231, 231);
+  font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+/* mouse over link */
+a:hover {
+  color: rgb(122, 31, 122);
+  font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+/* selected link */
+a:active {
+  color: white;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+}
+footer{
+  font-size: large;
+  font-family: Georgia, 'Times New Roman', Times, serif;
 }

@@ -44,7 +44,7 @@ function AppViewBuilder() {
             {navbar.currentRoute === "/" && <HomeView viewModel={homeViewModel} />}
           </div>
         </h1 >
-        <h1>Footer placeholder</h1>
+        <footer> Christina Zimmer | Crzimmer1@gamil.com | All Rights Reserved </footer>
       </div >
     );
   });

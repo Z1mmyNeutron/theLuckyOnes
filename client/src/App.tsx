@@ -5,7 +5,7 @@ import { observer } from "mobx-react";
 import "@cloudscape-design/global-styles/index.css"
 import { NavbarView } from "./common/navbar/navbarView.tsx";
 import { NavbarViewModel } from "./common/navbar/navbarViewModel.ts";
-import { About } from "./common/components/about.tsx";
+import { AboutView, AboutViewModel } from "./common/components/about.tsx";
 import { HomeView, HomeViewModel } from "./common/components/home.tsx";
 
 
@@ -34,17 +34,17 @@ class AppViewModel {
 
 
 function AppViewBuilder() {
-  return observer(({ viewModel, navbar, homeViewModel }: { viewModel: AppViewModel, navbar: NavbarViewModel, homeViewModel: HomeViewModel }) => {
+  return observer(({ viewModel, navbar, homeViewModel, aboutViewModel }: { viewModel: AppViewModel, navbar: NavbarViewModel, homeViewModel: HomeViewModel, aboutViewModel: AboutViewModel }) => {
     return (
       <div className="App">
         <h1>
           <div style={{ alignItems: "horizontal" }}>
             <NavbarView viewModel={navbar}></NavbarView>
-            {navbar.currentRoute === "/about" && <About></About>}
+            {navbar.currentRoute === "/about" && <AboutView viewModel={aboutViewModel} />}
             {navbar.currentRoute === "/" && <HomeView viewModel={homeViewModel} />}
           </div>
         </h1 >
-        <h1>{viewModel.message}</h1>
+        <h1>Footer placeholder</h1>
       </div >
     );
   });
@@ -54,9 +54,10 @@ const AppView = AppViewBuilder();
 const appViewModel = new AppViewModel()
 const navbar = new NavbarViewModel();
 const homeViewModel = new HomeViewModel();
+const aboutViewModel = new AboutViewModel();
 
 function App() {
-  return <AppView viewModel={appViewModel} navbar={navbar} homeViewModel={homeViewModel} />
+  return <AppView viewModel={appViewModel} navbar={navbar} homeViewModel={homeViewModel} aboutViewModel={aboutViewModel} />
 }
 
 export default App;

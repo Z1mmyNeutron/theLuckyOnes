@@ -1,4 +1,5 @@
 import { makeAutoObservable } from "mobx";
+import "../components/home.css";
 
 export class NavbarViewModel {
   constructor() {

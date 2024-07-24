@@ -1,31 +1,45 @@
+html{
+    background-color: black;
+     
+}
 .Card{
     padding:'20%';
     font-family: Georgia, 'Times New Roman', Times, serif;
+    background-color: black;
 }
 p:hover{
     color: rgb(255, 255, 255);
     font-family: Georgia, 'Times New Roman', Times, serif;
+    background-color: black;
 }
 /* unvisited link */
 a:link {
     color: white;
     font-family: Georgia, 'Times New Roman', Times, serif;
+    background-color: black;
   }
   
   /* visited link */
   a:visited {
     color: rgb(231, 231, 231);
     font-family: Georgia, 'Times New Roman', Times, serif;
+    background-color: black;
   }
   
   /* mouse over link */
   a:hover {
     color: rgb(122, 31, 122);
     font-family: Georgia, 'Times New Roman', Times, serif;
+    background-color: black;
   }
   
   /* selected link */
   a:active {
     color: white;
     font-family: Georgia, 'Times New Roman', Times, serif;
+    background-color: black;
+  }
+  
+  head{
+    background-color: black;
   }

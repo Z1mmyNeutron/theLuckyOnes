@@ -15,5 +15,6 @@ export class NavbarViewModel {
   routes = [
     { name: "Home", url: "/" },
     { name: "About", url: "/about" },
+    { name: "Poems", url: "/poems" },
   ];
 }

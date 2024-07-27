@@ -2,11 +2,29 @@ html{
     background-color: black;
      
 }
+
 .Card{
     padding:'20%';
     font-family: Georgia, 'Times New Roman', Times, serif;
     background-color: black;
+    
 }
+/* }
+img{
+  filter: grayscale(100%);
+  -webkit-transition: all 20s;
+  transition: all 20s;
+  background-color: black;
+  opacity: "90%";
+  transition-property: all;
+}
+
+img:hover{
+  filter:grayscale(0%);
+  -webkit-transform: all 5s;
+  transform: all 5s;
+  transition-property: all;
+} */
 p:hover{
     color: rgb(255, 255, 255);
     font-family: Georgia, 'Times New Roman', Times, serif;

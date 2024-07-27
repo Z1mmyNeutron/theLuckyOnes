@@ -3,11 +3,12 @@ import { observer } from "mobx-react";
 import React from "react";
 import "../components/home.css"
 
+
 type CardType = string | any;
 const map = new Map([
     ["book1", require("../../assets/images/book1.jpg")],
     ["book2", require("../../assets/images/book29.jpg")],
-    ["book3", require("../../assets/images/book3.jpeg")],
+    ["book3", require("../../assets/images/book3.jpg")],
     ["book4", require("../../assets/images/book4.jpeg")],
     ["book5", require("../../assets/images/book5.png")],
     ["book6", require("../../assets/images/book6.jpeg")],
@@ -61,6 +62,10 @@ export class CardViewModel {
             transform: this.flip ? 'scaleY(-1)' : 'scaleY(1)',
             transition: 'transform 0.5s ease',
             borderRadius: 5,
+            fontSize: "large",
+
+
+
         };
     }
 }
@@ -91,7 +96,7 @@ export class HomeViewModel {
     cardViewModels: CardViewModel[] = [
         new CardViewModel("book11", "I'm playing poker with the Gods, they said to call my mama but it's a quarter to the witching hour and she hates when I cause drama."),
         new CardViewModel("book14", "God tell me your sins, I need to know truth, If I'm made in your likeness are you like me too?"),
-        new CardViewModel("book22", "back2"),
+        new CardViewModel("book22", "It won't matter in a moment, I gave them a warning; see they haven't me the monster I've been teaching conformance. If they thought love was too much, just wait for my next performance."),
         new CardViewModel("book1", "back"),
         new CardViewModel("book2", "back"),
         new CardViewModel("book3", "I want to remember you as I used to, not as a prisoner during her great escape peering back over her shoulder as the alarm bells ring, wondering if she is going to be caught or if she has covered enough ground to put the past behind her. I want to remember you like you still love me."),

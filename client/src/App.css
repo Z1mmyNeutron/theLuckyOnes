@@ -6,6 +6,7 @@ head{
   background-color: black;
   color:white;
   font-family: Georgia, 'Times New Roman', Times, serif;
+  overflow: scroll;
 }
 
 .App-logo {

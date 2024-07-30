@@ -108,30 +108,27 @@ export function PoemViewBuilder() {
         return (
             <div
                 style={{
-
                     color: "white",
-                    width: "80%",
+                    width: "70%",
                     display: "grid",
                     gridTemplateColumns: "1r 1r 1r"
                 }}
             >
                 <p>{viewModel.poemPreview}</p>
-                <div
-                    style={{
-                        display: "grid",
-                        gridTemplateColumns: "1fr 1fr 1fr",
-
-                    }}
-                >
+                <div style={{
+                    display: "grid",
+                    gridTemplateColumns: "1fr 1fr 1fr",
+                }}>
                     {viewModel.poems.map((poem, index) => (
                         <div
                             key={index}
                             style={{
                                 alignItems: "center",
-                                width: "300px",
+                                width: "22.5VW",
                                 height: "400px", // Increased height
                                 border: '1px solid white',
-                                overflow: 'auto' // Enable scrolling
+                                overflow: 'auto', // Enable scrolling
+
                             }}
                         >
                             <h3>{poem.title}</h3>

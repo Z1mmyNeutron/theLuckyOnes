@@ -97,12 +97,12 @@ export class HomeViewModel {
         makeAutoObservable(this);
     }
     cardViewModels: CardViewModel[] = [
-        new CardViewModel("book11", "I'm playing poker with the Gods, they said to call my mama but it's a quarter to the witching hour and she hates when I cause drama."),
         new CardViewModel("book14", "God tell me your sins, I need to know truth, If I'm made in your likeness are you like me too?"),
+        new CardViewModel("book11", "I'm playing poker with the Gods, they said to call my mama but it's a quarter to the witching hour and she hates when I cause drama."),
         new CardViewModel("book22", "It won't matter in a moment, I gave them a warning; see they haven't me the monster I've been teaching conformance. If they thought love was too much, just wait for my next performance."),
-        new CardViewModel("book1", "back"),
-        new CardViewModel("book2", "back"),
+        new CardViewModel("book19", "back"),
         new CardViewModel("book3", "I want to remember you as I used to, not as a prisoner during her great escape peering back over her shoulder as the alarm bells ring, wondering if she is going to be caught or if she has covered enough ground to put the past behind her. I want to remember you like you still love me."),
+        new CardViewModel("book24", `Oh my darling, what a mess I've made. Corpses of mistakes rising up from their graves. If I could go back I'd ask Father Time, "Would you be happier if I never made you mine?"`),
         new CardViewModel("book4", "The last time I light up a marbolo red was five years, six months, seven hours, three minutes and fifteen seconds ago. It smelled like you."),
         new CardViewModel("book5", "book2"),
         new CardViewModel("book6", `"Sometimes all you truly need is your dawg" -Gandi, probably"`),
@@ -117,12 +117,12 @@ export class HomeViewModel {
         new CardViewModel("book16", "back2"),
         new CardViewModel("book17", "back2"),
         new CardViewModel("book18", "Stolen sunglasses cover pupils bigger than your promises, part of just wishes you were honest."),
-        new CardViewModel("book19", "Back2"),
+        new CardViewModel("book1", "Back2"),
         new CardViewModel("book20", "back2"),
         new CardViewModel("book21", "back2"),
 
         new CardViewModel("book23", "back2"),
-        new CardViewModel("book24", `Oh my darling, what a mess I've made. Corpses of mistakes rising up from their graves. If I could go back I'd ask Father Time, "Would you be happier if I never made you mine?"`),
+        new CardViewModel("book2", `back2`),
         new CardViewModel("book25", "back2"),
         new CardViewModel("book26", "back2"),
         new CardViewModel("book27", "back2"),

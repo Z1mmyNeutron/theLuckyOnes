@@ -76,7 +76,7 @@ function RenderCardType(value: CardType, style: any) {
     if (map.has(value)) {
         return <img style={style} src={map.get(value)} height={400} width={325} />
     }
-    return <p style={{ ...style, padding: 20, }}>{value}</p>
+    return <p style={{ ...style, padding: 10, }}>{value}</p>
 
 }
 function CardViewBuilder() {
@@ -133,7 +133,7 @@ export class HomeViewModel {
 export function HomeViewBuilder() {
     return observer(({ viewModel }: { viewModel: HomeViewModel }) => {
         return <div style={{
-            margin: "10%", width: "80%", display: "grid", gridTemplateColumns: "1fr 1fr 1fr"
+            width: "80%", display: "grid", gridTemplateColumns: "1fr 1fr 1fr"
         }}>
             {viewModel.cardViewModels.map(card => <CardView viewModel={card} />)}
         </div >

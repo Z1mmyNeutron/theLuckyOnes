@@ -1,3 +1,12 @@
+The Luck Ones
+A a website for a poembook I created.
+
+To do:
+-increase padding between the images
+-get rid of html bar spacing
+-create scroll for poems page
+-fixing lines on the cards so they're all even
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

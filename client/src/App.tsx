@@ -39,7 +39,7 @@ function AppViewBuilder() {
     return (
       <div className="App">
         <h1>
-          <div style={{ alignItems: "horizontal", marginLeft: "13.5%", color: "white", width: "80%", display: "grid", gridTemplateColumns: "1r 1r 1r" }}>
+          <div style={{ alignItems: "horizontal", marginLeft: "15%", color: "white", width: "70%", display: "grid", gridTemplateColumns: "1r 1r 1r" }}>
             <NavbarView viewModel={navbar}></NavbarView>
             {navbar.currentRoute === "/about" && <AboutView viewModel={aboutViewModel} />}
             {navbar.currentRoute === "/poems" && <PoemView viewModel={poemViewModel} />}

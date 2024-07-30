@@ -43,11 +43,13 @@ export class CardViewModel {
     front: CardType;
     back: CardType;
     cardViewModels: any;
+    grayscale: number;
 
     constructor(front: CardType, back: CardType) {
         makeAutoObservable(this);
         this.front = front
         this.back = back
+        this.grayscale = 100;
     }
 
     get cardFace(): CardType {
@@ -60,9 +62,10 @@ export class CardViewModel {
     get getFlipStyle() {
         return {
             transform: this.flip ? 'scaleY(-1)' : 'scaleY(1)',
-            transition: 'transform 0.5s ease',
+            transition: 'transform scaleY 0.5s ease',
             borderRadius: 5,
             fontSize: "large",
+
 
 
 
@@ -73,7 +76,7 @@ function RenderCardType(value: CardType, style: any) {
     if (map.has(value)) {
         return <img style={style} src={map.get(value)} height={400} width={325} />
     }
-    return <p style={{ ...style, padding: 20 }}>{value}</p>
+    return <p style={{ ...style, padding: 20, }}>{value}</p>
 
 }
 function CardViewBuilder() {

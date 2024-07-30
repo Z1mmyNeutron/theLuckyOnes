@@ -6,11 +6,9 @@ head{
   background-color: black;
   color:white;
   font-family: Georgia, 'Times New Roman', Times, serif;
-  overflow: scroll;
 }
 
 .App-logo {
-  height: 40vmin;
   pointer-events: none;
   font-family: Georgia, 'Times New Roman', Times, serif;
   background-color: black;
@@ -25,7 +23,6 @@ head{
 
 .App-header {
   background-color: black;
-  min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -41,19 +38,6 @@ head{
   font-family: Georgia, 'Times New Roman', Times, serif;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-p:hover{
-  background-color: black;
-  color: rgb(255, 255, 255);
-  font-family: Georgia, 'Times New Roman', Times, serif;
-}
 /* unvisited link */
 a:link {
   background-color: black;
@@ -81,8 +65,25 @@ a:active {
   color: white;
   font-family: Georgia, 'Times New Roman', Times, serif;
 }
+
+button{
+  background: none;
+  border: none;
+  color: inherit;
+  font: inherit;
+  cursor: pointer;
+  padding: 0;
+  outline: inherit;
+  padding-left: 5%;
+}
 footer{
   background-color: black;
   font-size: large;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+p:hover{
+  background-color: black;
+  color: rgb(255, 255, 255);
   font-family: Georgia, 'Times New Roman', Times, serif;
 }

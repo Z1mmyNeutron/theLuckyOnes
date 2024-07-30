@@ -13,11 +13,10 @@ function Link(href: string, text: string) {
     >
         {text}
     </a>
-
 }
 function NavbarViewBuilder() {
     return observer(({ viewModel }: { viewModel: NavbarViewModel }) => {
-        return <div>
+        return <div id="navbar">
             {viewModel.routes.map(route => {
                 return (
                     <button onClick={() => { viewModel.currentRoute = route.url }}>{route.name}</button>

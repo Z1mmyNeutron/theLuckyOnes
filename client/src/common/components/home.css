@@ -1,16 +1,51 @@
-html{
-    background-color: black;
-     
+a:link {
+  color: white;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  background-color: black;
+  text-decoration: none;
 }
 
-.Card{
-    padding:'20%';
-    font-family: Georgia, 'Times New Roman', Times, serif;
-    background-color: black;
-    
+/* visited link */
+a:visited {
+  color: rgb(231, 231, 231);
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  background-color: black;
+  text-decoration: none;
 }
-/* }
-img{
+
+/* mouse over link */
+a:hover {
+  color: rgb(122, 31, 122);
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  background-color: black;
+  text-decoration: none;
+}
+
+/* selected link */
+a:active {
+  color: white;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  background-color: black;
+  text-decoration: none;
+}
+.Card{
+  padding:'100%';
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  background-color: black;
+  
+}    
+head{
+  background-color: black;
+}
+html{
+    background-color: black;
+    max-height: 0vh;
+}
+
+
+
+
+/* img{
   filter: grayscale(100%);
   -webkit-transition: all 20s;
   transition: all 20s;
@@ -24,44 +59,10 @@ img:hover{
   -webkit-transform: all 5s;
   transform: all 5s;
   transition-property: all;
-} */
+}  */
 p:hover{
     color: rgb(255, 255, 255);
     font-family: Georgia, 'Times New Roman', Times, serif;
     background-color: black;
 }
 /* unvisited link */
-a:link {
-    color: white;
-    font-family: Georgia, 'Times New Roman', Times, serif;
-    background-color: black;
-    text-decoration: none;
-  }
-  
-  /* visited link */
-  a:visited {
-    color: rgb(231, 231, 231);
-    font-family: Georgia, 'Times New Roman', Times, serif;
-    background-color: black;
-    text-decoration: none;
-  }
-  
-  /* mouse over link */
-  a:hover {
-    color: rgb(122, 31, 122);
-    font-family: Georgia, 'Times New Roman', Times, serif;
-    background-color: black;
-    text-decoration: none;
-  }
-  
-  /* selected link */
-  a:active {
-    color: white;
-    font-family: Georgia, 'Times New Roman', Times, serif;
-    background-color: black;
-    text-decoration: none;
-  }
-  
-  head{
-    background-color: black;
-  }

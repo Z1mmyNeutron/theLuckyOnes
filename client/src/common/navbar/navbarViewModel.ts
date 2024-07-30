@@ -13,6 +13,7 @@ export class NavbarViewModel {
   linkText: string = "Purchase Here Book";
   currentRoute = "/";
   routes = [
+    { name: "The Lucky Ones", url: this.link },
     { name: "Home", url: "/" },
     { name: "About", url: "/about" },
     { name: "Poems", url: "/poems" },

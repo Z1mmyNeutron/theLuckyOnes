@@ -16,12 +16,20 @@ function Link(href: string, text: string) {
 }
 function NavbarViewBuilder() {
     return observer(({ viewModel }: { viewModel: NavbarViewModel }) => {
+        const handleClick = (url: string) => {
+            if (url.startsWith("http")) {
+                window.location.href = url;
+            } else {
+                viewModel.currentRoute = url;
+            }
+        };
+
         return <div id="navbar">
-            {viewModel.routes.map(route => {
-                return (
-                    <button onClick={() => { viewModel.currentRoute = route.url }}>{route.name}</button>
-                )
-            })}
+            {viewModel.routes.map(route => (
+                <button key={route.name} onClick={() => handleClick(route.url)}>
+                    {route.name}
+                </button>
+            ))}
             <h1>{viewModel.name}</h1>
             <h2>{viewModel.author}</h2>
             <p>

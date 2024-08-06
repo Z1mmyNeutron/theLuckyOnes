@@ -87,7 +87,80 @@ It was the promise I almost broke to younger self that no matter how hard life t
 The death of an artist starts not with the choice to speak in a language does not build for their tongue but with the refusal to make it their own.
 Get creative.
 It’s all you have left.
+`},
+    {
+        title: "Seven",
+        content: `Goodbye is kinder. It’s a see you later, a talk soon, a temporary disappearance. Fairwell is different. It’s thank you for the memories, I hope everything goes your way, especially because I won’t be around to make sure it happens. I’ve always said closure doesn’t truly exist, but in the juxtaposition between the two words I refute myself. After all, there is a simple peace in finality.
+`},
+    {
+        title: "Eight",
+        content: `Clear the house,
+Clear the door,
+I don’t belong here anymore.
+
+
+It was nice,
+You were kind,
+In a trivial space of mind.
+
+It’s all good,
+But I left, 
+And when I look back there’s no regrets.
+
+Time to go, 
+On my own, 
+I learned to not fear being alone.
+
+Thank you for the gifts you gave,
+They weren’t worth all the pain.
+Grateful none the less
+To be known is to be blessed.
+`},
+    {
+        title: "Nine",
+        content: `I loved you but not in that way 
+Every one could see it 
+It was useless when they tried to comfort me 
+All I could say was so be it 
+
+I dont want to make assumptions 
+I don’t want to be a man 
+But in a another life 
+It would’ve changed your plan 
+
+I was the one who called it off 
+Spotting all the Catholic guilt 
+Still when it’s all said and done
+These words only allude to a fraction of what we built
+
+I don’t want to lose another moment 
+I got your voicemail while I stare at the ceiling 
+It’s a different kind of love 
+The kind that five years later still sends me reeling 
+
+Caught between some anger and my fair share of the pain,
+Avoiding all the Nissan’s, Columbia rain and girls that do ballet
+Forever didn’t mean years
+Turns out i was a holder for some days
+
+I’ll keep your memories safe
+I won’t spill the secrets you shared
+When anyone asks me if I’m over it 
+I’d be lying if I said I didn’t care 
+
+I can spend a thousand nights trapped in a broken clock
+Stuck in the 2010s that end with nine
+Laughing in the nameless bars
+Back when you were still almost mine
+
+I’m tripped up babe, time did nothing to stop the feelings,
+I can still taste your lips from the cigarette
+And when I wish you the best I still mean it,
+if only you were one of those people I could forget,
+Then I wouldn't be caught between it.
+
 `}
+
 ];
 
 export class PoemViewModel {

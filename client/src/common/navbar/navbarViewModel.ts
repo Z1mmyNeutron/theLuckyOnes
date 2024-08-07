@@ -17,5 +17,7 @@ export class NavbarViewModel {
     { name: "Home", url: "/" },
     { name: "About", url: "/about" },
     { name: "Poems", url: "/poems" },
+    { name: "Contact", url: "/contact" },
+    { name: "MockContact", url: "/contact/mockContactView" },
   ];
 }

@@ -8,6 +8,11 @@ import { NavbarViewModel } from "./common/navbar/navbarViewModel.ts";
 import { AboutView, AboutViewModel } from "./common/components/about.tsx";
 import { HomeView, HomeViewModel } from "./common/components/home.tsx";
 import { PoemView, PoemViewModel } from "./common/components/poems.tsx";
+import { ContactView, ContactViewModel } from "./common/components/contact.tsx";
+import { MockContactViewModel } from "./common/components/contact/mockContactViewModel.ts";
+import { MockContactView } from "./common/components/contact/mockContactViewBuilder.tsx";
+
+
 
 
 function serverCall(url: string, callback: ((data: any) => void)) {
@@ -35,12 +40,14 @@ class AppViewModel {
 
 
 function AppViewBuilder() {
-  return observer(({ viewModel, navbar, homeViewModel, aboutViewModel, poemViewModel }: { viewModel: AppViewModel, navbar: NavbarViewModel, homeViewModel: HomeViewModel, aboutViewModel: AboutViewModel, poemViewModel: PoemViewModel }) => {
+  return observer(({ viewModel, navbar, homeViewModel, aboutViewModel, poemViewModel, contactViewModel }: { viewModel: AppViewModel, navbar: NavbarViewModel, homeViewModel: HomeViewModel, aboutViewModel: AboutViewModel, poemViewModel: PoemViewModel, contactViewModel: ContactViewModel, mockContactViewModel: MockContactViewModel }) => {
     return (
       <div className="App">
         <h1>
           <div style={{ alignItems: "horizontal", marginLeft: "14%", color: "white", width: "70%", display: "grid", gridTemplateColumns: "1r 1r 1r" }}>
             <NavbarView viewModel={navbar}></NavbarView>
+            {navbar.currentRoute === '/contact2' && <MockContactView viewModel={mockContactViewModel} />}
+            {navbar.currentRoute === '/contact' && <ContactView viewModel={contactViewModel} />}
             {navbar.currentRoute === "/about" && <AboutView viewModel={aboutViewModel} />}
             {navbar.currentRoute === "/poems" && <PoemView viewModel={poemViewModel} />}
             {navbar.currentRoute === "/" && <HomeView viewModel={homeViewModel} />}
@@ -60,9 +67,12 @@ const navbar = new NavbarViewModel();
 const homeViewModel = new HomeViewModel();
 const aboutViewModel = new AboutViewModel();
 const poemViewModel = new PoemViewModel();
+const contactViewModel = new ContactViewModel();
+const mockContactViewModel = new MockContactViewModel();
+
 
 function App() {
-  return <AppView viewModel={appViewModel} navbar={navbar} homeViewModel={homeViewModel} aboutViewModel={aboutViewModel} poemViewModel={poemViewModel} />
+  return <AppView viewModel={appViewModel} navbar={navbar} homeViewModel={homeViewModel} aboutViewModel={aboutViewModel} poemViewModel={poemViewModel} contactViewModel={contactViewModel} mockContactViewModel={mockContactViewModel} />
 }
 
 export default App;

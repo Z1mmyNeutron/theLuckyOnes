@@ -246,7 +246,7 @@ const PoemViewComponent: React.FC<{ viewModel: PoemViewModel }> = observer(({ vi
                             margin: 0, // Remove margin to prevent extra space issues
                             maxHeight: expandedPoems[index] ? 'none' : '6em', // Limit height when collapsed
                             overflow: 'hidden', // Hide overflow to prevent text from spilling out
-                            transition: 'max-height 0.3s ease', // Smooth transition for height change
+                            transition: 'max-height .5s ease', // Smooth transition for height change
                         }}>
                             {expandedPoems[index] ? poem.content : getTruncatedText(poem.content)}
                         </p>

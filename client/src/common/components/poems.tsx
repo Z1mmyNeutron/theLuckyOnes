@@ -1,6 +1,7 @@
 import { makeAutoObservable } from "mobx";
 import { observer } from "mobx-react";
-import React from "react";
+import React, { useState } from "react";
+
 import "../components/home.css";
 
 function Link(href: string, text: string) {
@@ -163,6 +164,7 @@ Then I wouldn't be caught between it.
 
 ];
 
+
 export class PoemViewModel {
     poemPreview: string = "Please enjoy some of my work.";
     poems: Poem[] = poems;
@@ -176,43 +178,83 @@ export class PoemViewModel {
     }
 }
 
-export function PoemViewBuilder() {
-    return observer(({ viewModel }: { viewModel: PoemViewModel }) => {
-        return (
+
+const PoemViewComponent: React.FC<{ viewModel: PoemViewModel }> = observer(({ viewModel }) => {
+    const [expandedPoems, setExpandedPoems] = useState<boolean[]>(new Array(viewModel.poems.length).fill(false));
+
+    // Function to truncate text to the first 10 words
+    const getTruncatedText = (text: string, wordLimit: number = 10): string => {
+        const words = text.split(' ');
+        if (words.length <= wordLimit) {
+            return text;
+        }
+        return words.slice(0, wordLimit).join(' ') + '...'; // Add ellipsis if truncated
+    };
+
+    const toggleExpand = (index: number) => {
+        setExpandedPoems(prev => {
+            const newExpandedPoems = [...prev];
+            newExpandedPoems[index] = !newExpandedPoems[index];
+            return newExpandedPoems;
+        });
+    };
+
+    return (
+        <>
+            <p>{viewModel.poemPreview}</p>
             <div
                 style={{
                     color: "white",
                     width: "70%",
                     display: "grid",
-                    gridTemplateColumns: "1r 1r 1r"
+                    gridTemplateColumns: "1fr 1fr 1fr",
+                    gap: "10px", // Add space between the poem cards
                 }}
             >
-                <p>{viewModel.poemPreview}</p>
-                <div style={{
-                    display: "grid",
-                    gridTemplateColumns: "1fr 1fr 1fr",
-                }}>
-                    {viewModel.poems.map((poem, index) => (
-                        <div
-                            key={index}
+                {viewModel.poems.map((poem, index) => (
+                    <div
+                        key={index}
+                        style={{
+                            position: 'relative', // To position the button absolutely
+                            width: "22.5VW",
+                            minHeight: expandedPoems[index] ? "auto" : "400px", // Adjust height based on expanded state
+                            border: '1px solid white',
+                            overflow: 'hidden', // Hide overflow for poem content
+                            transition: 'min-height 0.3s ease', // Smooth transition for height change
+                            padding: '10px',
+                        }}
+                    >
+                        <button
+                            onClick={() => toggleExpand(index)}
                             style={{
-                                alignItems: "center",
-                                width: "22.5VW",
-                                height: "400px", // Increased height
+                                position: 'relative',
+                                top: '10px',
+                                paddingRight: '10px',
+                                backgroundColor: 'transparent',
+                                color: 'white',
                                 border: '1px solid white',
-                                overflow: 'auto', // Enable scrolling
-
+                                borderRadius: '5px',
+                                cursor: 'pointer',
+                                zIndex: 1, // Ensure the button is above the content
                             }}
                         >
-                            <h3>{poem.title}</h3>
-                            <p style={{ whiteSpace: 'pre-wrap' }}>{poem.content}</p>
-                        </div>
-                    ))}
-                </div>
-            </div>
-        );
-    });
-}
+                            {expandedPoems[index] ? 'Collapse' : 'Expand'}
+                        </button>
+                        <h3>{poem.title}</h3>
+                        <p style={{
+                            whiteSpace: 'pre-wrap',
+                            margin: 0, // Remove margin to prevent extra space issues
+                            maxHeight: expandedPoems[index] ? 'none' : '6em', // Limit height when collapsed
+                            overflow: 'hidden', // Hide overflow to prevent text from spilling out
+                            transition: 'max-height 0.3s ease', // Smooth transition for height change
+                        }}>
+                            {expandedPoems[index] ? poem.content : getTruncatedText(poem.content)}
+                        </p>
+                    </div>
+                ))}
+            </div >
+        </>
+    );
+});
 
-export const PoemView = PoemViewBuilder();
-
+export const PoemView = PoemViewComponent;

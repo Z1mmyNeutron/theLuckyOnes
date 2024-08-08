@@ -7,9 +7,14 @@ To do:
 -Fix the 15% error that's shifting the sizes on everything
 -increase padding between the images
 -fixing lines on the cards so they're all even
-
-possible to do:
--update navbar to include logo and shift across entire screen?
+-update navbar to include logo and shift across entire screen
+-make navbar collapsable and movable to the side
+-restyle the cards to be scrollable and move across the page
+-begin design for version 2.0
+-Photo for design logo / maybe animation?
+-Darkmode and light mode
+-create contact page that works and sends to your email
+-make mobile version
 
 Scripts for src:
 

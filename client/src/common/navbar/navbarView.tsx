@@ -1,44 +1,59 @@
-
+import React, { Component } from "react";
 import { observer } from "mobx-react";
 import { NavbarViewModel } from "./navbarViewModel";
-import React from "react";
-import "../components/home.css"
+import "../navbar/navbar.css";
+import { NavbarHeader } from "../navbar/navbarHeader.tsx";
 
-
-function Link(href: string, text: string) {
-    console.log(window.location)
-    return <a
-        href={href}
-        target="_blank"
-    >
-        {text}
-    </a>
+// Type definition for component state
+interface NavbarViewState {
+    isCollapsed: boolean;
 }
-function NavbarViewBuilder() {
-    return observer(({ viewModel }: { viewModel: NavbarViewModel }) => {
-        const handleClick = (url: string) => {
-            if (url.startsWith("http")) {
-                window.location.href = url;
-            } else {
-                viewModel.currentRoute = url;
-            }
-        };
 
-        return <div id="navbar">
-            {viewModel.routes.map(route => (
-                <button key={route.name} onClick={() => handleClick(route.url)}>
-                    {route.name}
+// Type definition for component props
+interface NavbarViewProps {
+    viewModel: NavbarViewModel;
+}
+
+@observer
+class NavbarView extends Component<NavbarViewProps, NavbarViewState> {
+    state: NavbarViewState = {
+        isCollapsed: true,
+    };
+
+    handleClick = (url: string) => {
+        if (url.startsWith("http")) {
+            window.location.href = url;
+        } else {
+            this.props.viewModel.currentRoute = url;
+        }
+    };
+
+    toggleCollapse = () => {
+        this.setState(prevState => ({
+            isCollapsed: !prevState.isCollapsed,
+        }));
+    };
+
+    render() {
+        const { viewModel } = this.props;
+        const { isCollapsed } = this.state;
+
+        return (
+            <div id="navbar">
+                <button className="collapse-button" onClick={this.toggleCollapse}>
+                    {isCollapsed ? "☰" : "✕"}
                 </button>
-            ))}
-            <h1>{viewModel.name}</h1>
-            <h2>{viewModel.author}</h2>
-            <p>
-                {Link(viewModel.link, viewModel.linkText)}
-            </p>
-
-        </div>
+                <div className={`navbar-content ${isCollapsed ? "" : "show"}`}>
+                    {viewModel.routes.map(route => (
+                        <button key={route.name} onClick={() => this.handleClick(route.url)}>
+                            {route.name}
+                        </button>
+                    ))}
+                </div>
+                <NavbarHeader viewModel={viewModel} />
+            </div>
+        );
     }
-    )
 }
 
-export const NavbarView = NavbarViewBuilder();
+export { NavbarView };

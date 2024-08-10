@@ -45,13 +45,17 @@ function AppViewBuilder() {
         <h1>
           <div style={{ alignItems: "horizontal", marginLeft: "14%", color: "white", width: "70%", display: "grid", gridTemplateColumns: "1r 1r 1r" }}>
             <NavbarView viewModel={navbar}></NavbarView>
+
             {navbar.currentRoute === '/contact/mock' && <MockView viewModel={mockViewModel} />}
             {navbar.currentRoute === '/contact' && <ContactView viewModel={contactViewModel} />}
             {navbar.currentRoute === "/about" && <AboutView viewModel={aboutViewModel} />}
             {navbar.currentRoute === "/poems" && <PoemView viewModel={poemViewModel} />}
             {navbar.currentRoute === "/" && <HomeView viewModel={homeViewModel} />}
           </div>
+          <br />
+          <br />
         </h1 >
+
         <br />
         <br />
         <footer> Christina Zimmer | Crzimmer1@gamil.com | All Rights Reserved </footer>

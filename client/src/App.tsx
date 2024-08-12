@@ -9,7 +9,6 @@ import { AboutView, AboutViewModel } from "./common/components/about.tsx";
 import { HomeView, HomeViewModel } from "./common/components/home.tsx";
 import { PoemView, PoemViewModel } from "./common/components/poems.tsx";
 import { ContactView, ContactViewModel } from "./common/components/contact.tsx";
-import { MockView, MockViewModel } from "./common/components/contact/mock.tsx";
 
 
 
@@ -39,14 +38,13 @@ class AppViewModel {
 
 
 function AppViewBuilder() {
-  return observer(({ viewModel, navbar, homeViewModel, aboutViewModel, poemViewModel, contactViewModel }: { viewModel: AppViewModel, navbar: NavbarViewModel, homeViewModel: HomeViewModel, aboutViewModel: AboutViewModel, poemViewModel: PoemViewModel, contactViewModel: ContactViewModel, mockViewModel: MockViewModel }) => {
+  return observer(({ viewModel, navbar, homeViewModel, aboutViewModel, poemViewModel, contactViewModel }: { viewModel: AppViewModel, navbar: NavbarViewModel, homeViewModel: HomeViewModel, aboutViewModel: AboutViewModel, poemViewModel: PoemViewModel, contactViewModel: ContactViewModel }) => {
     return (
       <div className="App">
         <h1>
           <div style={{ alignItems: "horizontal", marginLeft: "14%", color: "white", width: "70%", display: "grid", gridTemplateColumns: "1r 1r 1r" }}>
             <NavbarView viewModel={navbar}></NavbarView>
 
-            {navbar.currentRoute === '/contact/mock' && <MockView viewModel={mockViewModel} />}
             {navbar.currentRoute === '/contact' && <ContactView viewModel={contactViewModel} />}
             {navbar.currentRoute === "/about" && <AboutView viewModel={aboutViewModel} />}
             {navbar.currentRoute === "/poems" && <PoemView viewModel={poemViewModel} />}
@@ -71,12 +69,12 @@ const homeViewModel = new HomeViewModel();
 const aboutViewModel = new AboutViewModel();
 const poemViewModel = new PoemViewModel();
 const contactViewModel = new ContactViewModel();
-const mockViewModel = new MockViewModel();
+
 
 
 
 function App() {
-  return <AppView viewModel={appViewModel} navbar={navbar} homeViewModel={homeViewModel} aboutViewModel={aboutViewModel} poemViewModel={poemViewModel} contactViewModel={contactViewModel} mockViewModel={mockViewModel} />
+  return <AppView viewModel={appViewModel} navbar={navbar} homeViewModel={homeViewModel} aboutViewModel={aboutViewModel} poemViewModel={poemViewModel} contactViewModel={contactViewModel} />
 }
 
 export default App;

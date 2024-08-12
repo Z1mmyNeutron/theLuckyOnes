@@ -8,30 +8,35 @@
     padding: 10px;
     position: relative;
     width: 100%;
+    overflow: hidden; /* Ensure the content doesn't overflow during transition */
 }
 
 #navbar .collapse-button {
     position: absolute;
     top: 10px;
-    left: 10px; /* Move to the left side */
+    left: 10px;
     background-color: none;
     border: none;
     color: white;
     padding: 5px 10px;
     cursor: pointer;
     font-size: 20px;
-    z-index: 1; /* Ensure it is above other content */
+    z-index: 1;
 }
 
 #navbar .navbar-content {
-    display: none;
-    flex-direction: column;
+    display: flex;
+    flex-direction: row;
     align-items: center;
-    width: 100%; /* Ensure content takes full width */
+    width: 100%;
+    max-height: 0; /* Start with a height of 0 */
+    overflow: hidden; /* Hide content overflow */
+    transition: max-height 0.3s ease; /* Smooth transition for max-height */
 }
 
 #navbar .navbar-content.show {
-    display: flex;
+    max-height: 500px; /* Set a maximum height when expanded */
+    transition: max-height 0.5s ease; /* Smooth transition for max-height */
 }
 
 #navbar button {
@@ -47,11 +52,20 @@
     text-decoration: underline;
 }
 
-#navbar h1, #navbar h2 {
-    margin: 10px 0;
+/* New styles for NavbarHeader */
+.navbar-header {
+    text-align: center;
+    padding: 10px;
+    background-color: none;
+    color: color;
+    width: 100%;
 }
 
-#navbar p {
+.navbar-header h1, .navbar-header h2 {
+    margin: 0;
+}
+
+.navbar-header p {
     margin: 0;
 }
 

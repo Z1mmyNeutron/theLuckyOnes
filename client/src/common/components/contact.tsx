@@ -91,19 +91,16 @@
 //         </div>
 //     );
 // });
-
 // export default ContactView;
 
 
-// contact.tsx
 import React, { ChangeEvent, FormEvent } from "react";
 import { makeAutoObservable } from "mobx";
 import { observer } from "mobx-react";
+import './home.css'; // Import your CSS file
 
 // Define ContactViewModel
 export class ContactViewModel {
-
-
     form = { name: "", email: "", message: "" };
 
     constructor() {
@@ -131,41 +128,43 @@ const ContactView: React.FC<{ viewModel: ContactViewModel }> = observer(({ viewM
     };
 
     return (
-        <div style={{ color: "white", margin: "10%", width: "80%" }}>
+        <div className="contact-container">
             <h1>Contact Us</h1>
-            <form onSubmit={handleSubmit} style={{ display: "grid", gap: "1rem" }}>
-                <label>
+            <form onSubmit={handleSubmit} className="contact-form">
+                <label className="contact-label">
                     Name:
                     <input
                         type="text"
                         name="name"
                         value={viewModel.form.name}
                         onChange={handleChange}
+                        className="contact-input"
                         required
                     />
                 </label>
-                <label>
+                <label className="contact-label">
                     Email:
                     <input
                         type="email"
                         name="email"
                         value={viewModel.form.email}
                         onChange={handleChange}
+                        className="contact-input"
                         required
                     />
                 </label>
-                <label>
+                <label className="contact-label">
                     Message:
                     <textarea
                         name="message"
                         value={viewModel.form.message}
                         onChange={handleChange}
+                        className="contact-textarea"
                         required
                     />
                 </label>
-                <button type="submit">Submit</button>
+                <button type="submit" className="contact-button">Submit</button>
             </form>
-
         </div>
     );
 });

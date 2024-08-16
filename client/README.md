@@ -2,18 +2,16 @@ The Luck Ones
 A a website for a poembook I created.
 
 To do:
-
 -fix font sizes in header
 -Fix the 15% error that's shifting the sizes on everything
 -increase padding between the images
 -fixing lines on the cards so they're all even
 -update navbar to include logo and shift across entire screen
--make navbar collapsable and movable to the side
 -restyle the cards to be scrollable and move across the page
 -begin design for version 2.0
 -Photo for design logo / maybe animation?
 -Darkmode and light mode
--create contact page that works and sends to your email
+-Make contact page work
 -make mobile version
 
 Scripts for src:

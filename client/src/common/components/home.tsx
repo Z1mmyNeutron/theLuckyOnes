@@ -9,12 +9,12 @@ const map = new Map([
     ["book1", require("../../assets/images/book1.jpg")],
     ["book2", require("../../assets/images/book2.jpg")],
     ["book3", require("../../assets/images/book3.jpg")],
-    ["book4", require("../../assets/images/book4.jpeg")],
+    ["book4", require("../../assets/images/book4.jpg")],
     ["book5", require("../../assets/images/book5.png")],
     ["book6", require("../../assets/images/book6.jpeg")],
     ["book7", require("../../assets/images/book7.jpeg")],
     ["book8", require("../../assets/images/book8.jpeg")],
-    ["book9", require("../../assets/images/book9.jpeg")],
+    ["book9", require("../../assets/images/book9.jpg")],
     ["book10", require("../../assets/images/book10.jpeg")],
     ["book11", require("../../assets/images/book11.jpg")],
     ["book12", require("../../assets/images/book12.jpg")],
@@ -35,7 +35,7 @@ const map = new Map([
     ["book27", require("../../assets/images/book27.jpg")],
     ["book28", require("../../assets/images/book28.jpg")],
     ["book29", require("../../assets/images/book29.jpg")],
-
+    ["book30", require("../../assets/images/book30.jpg")],
 
 ])
 
@@ -127,7 +127,7 @@ export class HomeViewModel {
         new CardViewModel("book27", "back2"),
         new CardViewModel("book28", "back2"),
         new CardViewModel("book29", "back2"),
-
+        new CardViewModel("book30", `One day you will live closer and we will build together, but never mind the future- it is forged from the present and you are not the diamond but you are a miner and that is worth so much more.`),
 
     ]
 }

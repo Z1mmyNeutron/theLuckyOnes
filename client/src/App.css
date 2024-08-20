@@ -1,63 +1,74 @@
-
-head{
-  background-color: black;
+/* Define CSS variables for light and dark themes */
+:root {
+  --background-color: black;
+  --text-color: white;
+  --link-color: white;
+  --link-visited-color: rgb(231, 231, 231);
+  --link-hover-color: rgb(122, 31, 122);
+  --button-background: none;
+  --button-border: none;
 }
+
+/* Light theme */
+[data-theme='light'] {
+  --background-color: white;
+  --text-color: black;
+  --link-color: black;
+  --link-visited-color: rgb(122, 31, 122);
+  --link-hover-color: rgb(0, 0, 255);
+}
+
+
+/* General body styles */
+body {
+  background-color: var(--background-color);
+  color: var(--text-color);
+  font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+/* App styles */
 .App {
   text-align: center;
-  background-color: black;
-  color:white;
-  font-family: Georgia, 'Times New Roman', Times, serif;
- 
 }
 
 .App-header {
-  background-color: black;
+  background-color: var(--background-color);
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
-  color: white;
-  font-family: Georgia, 'Times New Roman', Times, serif;
+  color: var(--text-color);
 }
 
 .App-link {
-  background-color: black;
-  color: #ffffff;
-  font-family: Georgia, 'Times New Roman', Times, serif;
+  background-color: var(--background-color);
+  color: var(--link-color);
 }
 
-/* unvisited link */
-a:link {
-  background-color: black;
-  color: white;
-  font-family: Georgia, 'Times New Roman', Times, serif;
+/* Link styles */
+a {
+  background-color: var(--background-color);
+  color: var(--link-color);
+  text-decoration: none;
 }
 
-/* visited link */
 a:visited {
-  background-color: black;
-  color: rgb(231, 231, 231);
-  font-family: Georgia, 'Times New Roman', Times, serif;
+  color: var(--link-visited-color);
 }
 
-/* mouse over link */
 a:hover {
-  background-color: black;
-  color: rgb(122, 31, 122);
-  font-family: Georgia, 'Times New Roman', Times, serif;
+  color: var(--link-hover-color);
 }
 
-/* selected link */
 a:active {
-  background-color: black;
-  color: white;
-  font-family: Georgia, 'Times New Roman', Times, serif;
+  color: var(--text-color);
 }
 
-button{
-  background: none;
-  border: none;
+/* Button styles */
+button {
+  background: var(--button-background);
+  border: var(--button-border);
   color: inherit;
   font: inherit;
   cursor: pointer;
@@ -65,16 +76,160 @@ button{
   outline: inherit;
   padding-left: 5%;
 }
+.Card {
+  padding: 5%;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  background-color: var(--background-color);
+}
+
+/* Contact form styles */
+.contact-container {
+  color: #333;
+  background-color: #a29bc9;
+  margin: 5% auto;
+  width: 80%;
+  max-width: 600px;
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.contact-container h1 {
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.contact-label {
+  display: flex;
+  flex-direction: column;
+  font-size: 1rem;
+}
+
+.contact-input,
+.contact-textarea {
+  padding: 0.8rem;
+  border-radius: 4px;
+  border: 1px solid #ddd;
+  font-size: 1rem;
+  margin-top: 0.5rem;
+}
+
+.contact-textarea {
+  resize: vertical;
+  min-height: 100px;
+}
+
+.contact-button {
+  background-color: purple;
+  color: white;
+  border: none;
+  padding: 0.8rem;
+  border-radius: 4px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.contact-button:hover {
+  background-color: #0056b3;
+}
 
 
-footer{
-  background-color: black;
+footer {
+  background-color: var(--background-color);
   font-size: large;
-  font-family: Georgia, 'Times New Roman', Times, serif;
 }
 
-p:hover{
-  background-color: black;
-  color: rgb(255, 255, 255);
-  font-family: Georgia, 'Times New Roman', Times, serif;
+/* Navbar styles */
+#navbar {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: var(--text-color);
+  padding: 10px;
+  position: relative;
+  width: 100%;
+  overflow: hidden;
 }
+
+#navbar .collapse-button {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background-color: none;
+  border: none;
+  color: var(--text-color);
+  padding: 5px 10px;
+  cursor: pointer;
+  font-size: 20px;
+  z-index: 1;
+}
+
+#navbar .navbar-content {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 100%;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease;
+}
+
+#navbar .navbar-content.show {
+  max-height: 500px;
+  transition: max-height 0.5s ease;
+}
+
+#navbar button {
+  background: none;
+  border: none;
+  color: var(--text-color);
+  font-size: 16px;
+  margin: 5px;
+  cursor: pointer;
+}
+
+#navbar button:hover {
+  text-decoration: underline;
+}
+
+/* Navbar header styles */
+.navbar-header {
+  text-align: center;
+  padding: 10px;
+  color: var(--text-color);
+  width: 100%;
+}
+
+.navbar-header h1, .navbar-header h2 {
+  margin: 0;
+}
+
+.navbar-header p {
+  margin: 0;
+}
+
+@media (max-width: 600px) {
+  #navbar {
+    flex-direction: column;
+    align-items: stretch;
+  }
+}
+
+p {
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  color: var(--text-color);
+  background-color: var(--background-color);
+}
+
+p:hover {
+  color: var(--text-color);
+  background-color: var(--background-color);
+}
+

@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { observer } from "mobx-react";
 import { NavbarViewModel } from "./navbarViewModel";
-import "../navbar/navbar.css";
+import "../../App.css";
 import { NavbarHeader } from "../navbar/navbarHeader.tsx";
 
 // Type definition for component state

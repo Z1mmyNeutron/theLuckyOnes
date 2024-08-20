@@ -1,7 +1,7 @@
 import { makeAutoObservable } from "mobx";
 import { observer } from "mobx-react";
 import React from "react";
-import "../components/home.css"
+import "../../App.css"
 
 
 type CardType = string | any;

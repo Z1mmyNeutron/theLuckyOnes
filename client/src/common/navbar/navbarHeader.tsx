@@ -1,6 +1,6 @@
 import React from "react";
 import { NavbarViewModel } from "./navbarViewModel";
-import "../navbar/navbar.css";  // Make sure this CSS file includes the styles for .navbar-header
+import "../../App.css";  // Make sure this CSS file includes the styles for .navbar-header
 
 // Link component
 function Link(href: string, text: string) {

@@ -1,8 +1,10 @@
+
+
 import { makeAutoObservable } from "mobx";
 import { observer } from "mobx-react";
 import React, { useState } from "react";
 
-import "../components/home.css";
+import "../../App.css";
 
 function Link(href: string, text: string) {
     console.log(window.location);
@@ -164,7 +166,6 @@ Then I wouldn't be caught between it.
 
 ];
 
-
 export class PoemViewModel {
     poemPreview: string = "Please enjoy some of my work.";
     poems: Poem[] = poems;
@@ -178,9 +179,101 @@ export class PoemViewModel {
     }
 }
 
+// const PoemViewComponent: React.FC<{ viewModel: PoemViewModel }> = observer(({ viewModel }) => {
+//     const [expandedPoems, setExpandedPoems] = useState<boolean[]>(new Array(viewModel.poems.length).fill(false));
+//     const [isDarkMode, setIsDarkMode] = useState<boolean>(true);
+
+//     // Function to truncate text to the first 10 words
+//     const getTruncatedText = (text: string, wordLimit: number = 10): string => {
+//         const words = text.split(' ');
+//         if (words.length <= wordLimit) {
+//             return text;
+//         }
+//         return words.slice(0, wordLimit).join(' ') + '...'; // Add ellipsis if truncated
+//     };
+
+//     const toggleExpand = (index: number) => {
+//         setExpandedPoems(prev => {
+//             const newExpandedPoems = [...prev];
+//             newExpandedPoems[index] = !newExpandedPoems[index];
+//             return newExpandedPoems;
+//         });
+//     };
+
+//     const toggleTheme = () => {
+//         setIsDarkMode(prevMode => !prevMode);
+//         document.body.setAttribute('data-theme', isDarkMode ? 'light' : 'dark');
+//     };
+
+//     return (
+//         <>
+//             <button onClick={toggleTheme} style={{ margin: '10px', padding: '5px' }}>
+//                 Switch to {isDarkMode ? 'Light' : 'Dark'} Mode
+//             </button>
+//             <p>{viewModel.poemPreview}</p>
+//             <div
+//                 style={{
+//                     color: isDarkMode ? "white" : "black",
+//                     width: "70%",
+//                     display: "grid",
+//                     gridTemplateColumns: "1fr 1fr 1fr",
+//                     gap: "10px", // Add space between the poem cards
+//                 }}
+//             >
+//                 {viewModel.poems.map((poem, index) => (
+//                     <div
+//                         key={index}
+//                         style={{
+//                             position: 'relative', // To position the button absolutely
+//                             width: "22.5VW",
+//                             minHeight: expandedPoems[index] ? "auto" : "400px", // Adjust height based on expanded state
+//                             border: `1px solid ${isDarkMode ? 'white' : 'black'}`,
+//                             overflow: 'hidden', // Hide overflow for poem content
+//                             transition: 'min-height 0.3s ease', // Smooth transition for height change
+//                             padding: '10px',
+//                             backgroundColor: isDarkMode ? 'black' : 'white',
+//                         }}
+//                     >
+//                         <button
+//                             onClick={() => toggleExpand(index)}
+//                             style={{
+//                                 position: 'relative',
+//                                 top: '10px',
+//                                 paddingRight: '10px',
+//                                 backgroundColor: 'transparent',
+//                                 color: isDarkMode ? 'white' : 'black',
+//                                 border: `1px solid ${isDarkMode ? 'white' : 'black'}`,
+//                                 borderRadius: '5px',
+//                                 cursor: 'pointer',
+//                                 zIndex: 1, // Ensure the button is above the content
+//                             }}
+//                         >
+//                             {expandedPoems[index] ? 'Collapse' : 'Expand'}
+//                         </button>
+//                         <h3 style={{ color: isDarkMode ? 'white' : 'black' }}>{poem.title}</h3>
+//                         <p style={{
+//                             whiteSpace: 'pre-wrap',
+//                             margin: 0, // Remove margin to prevent extra space issues
+//                             maxHeight: expandedPoems[index] ? 'none' : '6em', // Limit height when collapsed
+//                             overflow: 'hidden', // Hide overflow to prevent text from spilling out
+//                             transition: 'max-height .5s ease', // Smooth transition for height change
+//                             color: isDarkMode ? 'white' : 'black',
+//                         }}>
+//                             {expandedPoems[index] ? poem.content : getTruncatedText(poem.content)}
+//                         </p>
+//                     </div>
+//                 ))}
+//             </div>
+//         </>
+//     );
+// });
+
+// export const PoemView = PoemViewComponent;
+
 
 const PoemViewComponent: React.FC<{ viewModel: PoemViewModel }> = observer(({ viewModel }) => {
     const [expandedPoems, setExpandedPoems] = useState<boolean[]>(new Array(viewModel.poems.length).fill(false));
+    const [isDarkMode, setIsDarkMode] = useState<boolean>(true);
 
     // Function to truncate text to the first 10 words
     const getTruncatedText = (text: string, wordLimit: number = 10): string => {
@@ -199,12 +292,20 @@ const PoemViewComponent: React.FC<{ viewModel: PoemViewModel }> = observer(({ vi
         });
     };
 
+    const toggleTheme = () => {
+        setIsDarkMode(prevMode => !prevMode);
+        document.body.setAttribute('data-theme', isDarkMode ? 'light' : 'dark');
+    };
+
     return (
         <>
-            <p>{viewModel.poemPreview}</p>
+            <button onClick={toggleTheme} style={{ margin: '10px', padding: '5px' }}>
+                Switch to {isDarkMode ? 'Light' : 'Dark'} Mode
+            </button>
+            <p style={{ color: isDarkMode ? 'white' : 'black' }}>{viewModel.poemPreview}</p>
             <div
                 style={{
-                    color: "white",
+                    color: isDarkMode ? "white" : "black",
                     width: "70%",
                     display: "grid",
                     gridTemplateColumns: "1fr 1fr 1fr",
@@ -218,10 +319,11 @@ const PoemViewComponent: React.FC<{ viewModel: PoemViewModel }> = observer(({ vi
                             position: 'relative', // To position the button absolutely
                             width: "22.5VW",
                             minHeight: expandedPoems[index] ? "auto" : "400px", // Adjust height based on expanded state
-                            border: '1px solid white',
+                            border: `1px solid ${isDarkMode ? 'white' : 'black'}`,
                             overflow: 'hidden', // Hide overflow for poem content
                             transition: 'min-height 0.3s ease', // Smooth transition for height change
                             padding: '10px',
+                            backgroundColor: isDarkMode ? 'black' : 'white',
                         }}
                     >
                         <button
@@ -231,8 +333,8 @@ const PoemViewComponent: React.FC<{ viewModel: PoemViewModel }> = observer(({ vi
                                 top: '10px',
                                 paddingRight: '10px',
                                 backgroundColor: 'transparent',
-                                color: 'white',
-                                border: '1px solid white',
+                                color: isDarkMode ? 'white' : 'black',
+                                border: `1px solid ${isDarkMode ? 'white' : 'black'}`,
                                 borderRadius: '5px',
                                 cursor: 'pointer',
                                 zIndex: 1, // Ensure the button is above the content
@@ -240,19 +342,22 @@ const PoemViewComponent: React.FC<{ viewModel: PoemViewModel }> = observer(({ vi
                         >
                             {expandedPoems[index] ? 'Collapse' : 'Expand'}
                         </button>
-                        <h3>{poem.title}</h3>
+                        <h3 style={{ color: isDarkMode ? 'white' : 'black' }}>{poem.title}</h3>
                         <p style={{
                             whiteSpace: 'pre-wrap',
                             margin: 0, // Remove margin to prevent extra space issues
                             maxHeight: expandedPoems[index] ? 'none' : '6em', // Limit height when collapsed
                             overflow: 'hidden', // Hide overflow to prevent text from spilling out
                             transition: 'max-height .5s ease', // Smooth transition for height change
+                            color: isDarkMode ? 'white' : 'black',
+                            backgroundColor: isDarkMode ? 'black' : 'white', // Set background color for text
+                            padding: '10px', // Add padding to improve readability
                         }}>
                             {expandedPoems[index] ? poem.content : getTruncatedText(poem.content)}
                         </p>
                     </div>
                 ))}
-            </div >
+            </div>
         </>
     );
 });

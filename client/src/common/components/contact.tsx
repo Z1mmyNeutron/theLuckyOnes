@@ -97,7 +97,7 @@
 import React, { ChangeEvent, FormEvent } from "react";
 import { makeAutoObservable } from "mobx";
 import { observer } from "mobx-react";
-import './home.css'; // Import your CSS file
+import "../../App.css"
 
 // Define ContactViewModel
 export class ContactViewModel {

@@ -6,13 +6,13 @@ To do:
 -Fix the 15% error that's shifting the sizes on everything
 -increase padding between the images
 -fixing lines on the cards so they're all even
--update navbar to include logo and shift across entire screen
+-update navbar to include logo
 -restyle the cards to be scrollable and move across the page
 -begin design for version 2.0
 -Photo for design logo / maybe animation?
--Darkmode and light mode
 -Make contact page work
 -make mobile version
+-Make more themes and figure out how to add the button to somewhere where it won't be ugly
 
 Scripts for src:
 

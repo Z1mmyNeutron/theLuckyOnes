@@ -15,7 +15,7 @@ const map = new Map([
     ["book7", require("../../assets/images/book7.jpeg")],
     ["book8", require("../../assets/images/book8.jpeg")],
     ["book9", require("../../assets/images/book9.jpg")],
-    ["book10", require("../../assets/images/book10.jpeg")],
+    ["book10", require("../../assets/images/book10.jpg")],
     ["book11", require("../../assets/images/book11.jpg")],
     ["book12", require("../../assets/images/book12.jpg")],
     ["book13", require("../../assets/images/book13.jpeg")],

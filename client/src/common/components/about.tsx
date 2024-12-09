@@ -14,11 +14,9 @@ function Link(href: string, text: string) {
 
 }
 export class AboutViewModel {
-    name: string = "Hi, my name is Christina Zimmer.";
-    bio: string = "I'm a coder, author, artist and I built this website to showcase my love of poetry.";
-    description: string = " The Lucky Ones is a compilation of my experiences in South Carolina, New Jersey and a compilation of heartbreak, heartache and repentance. It combines original artwork from memories and the words I could not find to explain them until it was too late to say them to everyone that mattered.";
-    buy: string = "It is available now on Amazon Kindle and compatible with IOS books library. Look out for the second edition coming soon, but in the mean time enjoy some of my work. It was paid through blood, sweat, pain and tears; while the lessons were hard to learn they were well worth it. I hope you enjoy.";
-    linkDirection: string = "Purchase at the top.";
+    bio: string = "I'm Christina Zimmer—a coder, author, and artist. I created this website to share my passion for poetry and creativity with you";
+    buy: string = "The Lucky Ones is a heartfelt compilation of my experiences across South Carolina and New Jersey, weaving together stories of heartbreak, heartache, and repentance. This work pairs original artwork inspired by cherished memories with the words I struggled to find until it was too late to share them with the people who mattered most."
+    linkDirection: string = "The collection is available now on Amazon Kindle and compatible with the iOS Books Library. Keep an eye out for the second edition, coming soon!";
     constructor() {
         makeAutoObservable(this);
 
@@ -32,9 +30,8 @@ export function AboutViewBuilder() {
         return <div style={{
             color: "white", margin: "10%", width: "80%", display: "grid", gridTemplateColumns: "1r 1r 1r"
         }}>
-            <p>{viewModel.name}</p>
+
             <p>{viewModel.bio}</p>
-            <p>{viewModel.description}</p>
             <p>{viewModel.buy}</p>
             <p>{viewModel.linkDirection}</p>
 

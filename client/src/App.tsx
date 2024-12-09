@@ -12,6 +12,7 @@ import { HomeView, HomeViewModel } from "./common/components/home.tsx";
 import { PoemView, PoemViewModel } from "./common/components/poems.tsx";
 import ContactView from "./common/components/contact.tsx";
 import { ContactViewModel } from "./common/components/contact.tsx";
+import { StoryView, StoryViewModel } from "./common/components/stories.tsx";
 
 function serverCall(url: string, callback: ((data: any) => void)) {
   fetch(url).then((res) => res.json()).then(callback);
@@ -41,7 +42,7 @@ class AppViewModel {
 }
 
 function AppViewBuilder() {
-  return observer(({ viewModel, navbar, homeViewModel, aboutViewModel, poemViewModel, contactViewModel }: { viewModel: AppViewModel, navbar: NavbarViewModel, homeViewModel: HomeViewModel, aboutViewModel: AboutViewModel, poemViewModel: PoemViewModel, contactViewModel: ContactViewModel }) => {
+  return observer(({ viewModel, navbar, homeViewModel, aboutViewModel, poemViewModel, contactViewModel, storyViewModel }: { viewModel: AppViewModel, navbar: NavbarViewModel, homeViewModel: HomeViewModel, aboutViewModel: AboutViewModel, poemViewModel: PoemViewModel, contactViewModel: ContactViewModel, storyViewModel: StoryViewModel }) => {
     return (
       <div className="App">
         <button onClick={() => viewModel.toggleTheme()}>
@@ -53,7 +54,9 @@ function AppViewBuilder() {
             {navbar.currentRoute === '/contact' && <ContactView viewModel={contactViewModel} />}
             {navbar.currentRoute === "/about" && <AboutView viewModel={aboutViewModel} />}
             {navbar.currentRoute === "/poems" && <PoemView viewModel={poemViewModel} />}
+            {navbar.currentRoute === "/stories" && <StoryView viewModel={storyViewModel} />}
             {navbar.currentRoute === "/" && <HomeView viewModel={homeViewModel} />}
+
 
           </div>
           <br />
@@ -74,9 +77,10 @@ const homeViewModel = new HomeViewModel();
 const aboutViewModel = new AboutViewModel();
 const poemViewModel = new PoemViewModel();
 const contactViewModel = new ContactViewModel();
+const storyViewModel = new StoryViewModel();
 
 function App() {
-  return <AppView viewModel={appViewModel} navbar={navbar} homeViewModel={homeViewModel} aboutViewModel={aboutViewModel} poemViewModel={poemViewModel} contactViewModel={contactViewModel} />;
+  return <AppView viewModel={appViewModel} navbar={navbar} homeViewModel={homeViewModel} aboutViewModel={aboutViewModel} poemViewModel={poemViewModel} contactViewModel={contactViewModel} storyViewModel={storyViewModel} />;
 }
 
 export default App;

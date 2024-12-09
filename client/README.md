@@ -9,11 +9,11 @@ To do:
 -update navbar to include logo
 -restyle the cards to be scrollable and move across the page
 -begin design for version 2.0
+    -About page - make div classes and split with photos
 -Photo for design logo / maybe animation?
 -Make contact page work
 -make mobile version
 -Make more themes and figure out how to add the button to somewhere where it won't be ugly
-
 Scripts for src:
 
 ### `npm start`

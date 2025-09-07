@@ -19,9 +19,13 @@ interface NavbarHeaderProps {
 const NavbarHeader: React.FC<NavbarHeaderProps> = ({ viewModel }) => {
     return (
         <div className="navbar-header">
-            <h1>{viewModel.name}</h1>
-            <h2>{viewModel.author}</h2>
-            <p>{Link(viewModel.link, viewModel.linkText)}</p>
+            <div className="header-content">
+                <h1 className="book-title">{viewModel.name}</h1>
+                <h2 className="author-name">{viewModel.author}</h2>
+                <div className="purchase-link">
+                    {Link(viewModel.link, viewModel.linkText)}
+                </div>
+            </div>
         </div>
     );
 };

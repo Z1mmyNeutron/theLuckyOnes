@@ -45,15 +45,16 @@ function AppViewBuilder() {
   return observer(({ viewModel, navbar, homeViewModel, aboutViewModel, poemViewModel, contactViewModel, storyViewModel }: { viewModel: AppViewModel, navbar: NavbarViewModel, homeViewModel: HomeViewModel, aboutViewModel: AboutViewModel, poemViewModel: PoemViewModel, contactViewModel: ContactViewModel, storyViewModel: StoryViewModel }) => {
     return (
       <div className="App">
-        <button onClick={() => viewModel.toggleTheme()}>
-          {viewModel.isDarkMode ? 'Switch to Light Mode' : 'Switch to Dark Mode'}
-        </button>
         <h1>
-          <div style={{ alignItems: "horizontal", marginLeft: "14%", color: "white", width: "70%", display: "grid", gridTemplateColumns: "1r 1r 1r" }}>
-            <NavbarView viewModel={navbar} />
+          <div style={{ alignItems: "horizontal", marginLeft: "5%", color: "white", width: "90%", display: "grid", gridTemplateColumns: "1r 1r 1r" }}>
+            <NavbarView
+              viewModel={navbar}
+              onThemeToggle={() => viewModel.toggleTheme()}
+              isDarkMode={viewModel.isDarkMode}
+            />
             {navbar.currentRoute === '/contact' && <ContactView viewModel={contactViewModel} />}
             {navbar.currentRoute === "/about" && <AboutView viewModel={aboutViewModel} />}
-            {navbar.currentRoute === "/poems" && <PoemView viewModel={poemViewModel} />}
+            {navbar.currentRoute === "/poems" && <PoemView viewModel={poemViewModel} navbar={navbar} />}
             {navbar.currentRoute === "/stories" && <StoryView viewModel={storyViewModel} />}
             {navbar.currentRoute === "/" && <HomeView viewModel={homeViewModel} />}
 

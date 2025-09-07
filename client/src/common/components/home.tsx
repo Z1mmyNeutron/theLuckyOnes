@@ -73,7 +73,7 @@ export class CardViewModel {
 }
 function RenderCardType(value: CardType, style: any) {
     if (map.has(value)) {
-        return <img style={style} src={map.get(value)} height={400} width={325} />
+        return <img style={style} src={map.get(value)} height={400} width={325} alt="Book cover" />
     }
     return <p style={{ ...style, padding: 10, }}>{value}</p>
 
@@ -81,7 +81,9 @@ function RenderCardType(value: CardType, style: any) {
 function CardViewBuilder() {
     return observer(({ viewModel }: { viewModel: CardViewModel }) => {
         return <div
-            style={{ ...viewModel.getFlipStyle, width: 325, height: 400, border: '1px solid black', paddingTop: '20%', }} onClick={() => {
+            className="home-card"
+            style={{ ...viewModel.getFlipStyle }}
+            onClick={() => {
                 viewModel.flip = !viewModel.flip
             }}>
             {RenderCardType(viewModel.cardFace, viewModel.getFlipStyle)}
@@ -130,9 +132,7 @@ export class HomeViewModel {
 export function HomeViewBuilder() {
     return observer(({ viewModel }: { viewModel: HomeViewModel }) => {
 
-        return <div style={{
-            width: "80%", display: "grid", gridTemplateColumns: "1fr 1fr 1fr"
-        }}>
+        return <div className="home-grid">
             {viewModel.cardViewModels.map(card => <CardView viewModel={card} />)}
         </div >
     }

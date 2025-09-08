@@ -21,47 +21,45 @@ export function AboutViewBuilder() {
                     <section className="about-section">
                         <h2 className="about-title">About the Author</h2>
                         <p className="about-text">
-                            Christina Zimmer is a multifaceted creative—a software developer, poet, and visual artist
-                            whose work bridges the gap between technology and human emotion. Based between South Carolina
-                            and New Jersey, she crafts digital experiences and literary works that explore the complexities
-                            of modern life, relationships, and personal growth.
+                            I'm Christina. I write code for a living and poetry to stay alive. I live in Philly now,
+                            but most of my real living happens in the spaces between what I can say out loud and
+                            what I have to write down.
                         </p>
                     </section>
 
                     <section className="about-section">
                         <h2 className="about-title">About The Lucky Ones</h2>
                         <p className="about-text">
-                            <em>The Lucky Ones</em> is a deeply personal collection that captures the raw essence of
-                            human experience through poetry and original artwork. Born from moments of heartbreak,
-                            reflection, and redemption, this work represents the words that often come too late—the
-                            thoughts we wish we could have shared with those who mattered most.
+                            <em>The Lucky Ones</em> started as the things I couldn't say to people's faces. The words
+                            that came too late, the apologies that never got spoken, the love that got stuck in my throat.
+                            It's the collection of moments when I was too afraid to be honest, so I wrote it down instead.
                         </p>
                         <p className="about-text">
-                            Each piece in this collection is paired with carefully crafted artwork, creating a
-                            multimedia experience that speaks to both the heart and the mind. The poems traverse
-                            themes of love, loss, faith, and the journey toward self-discovery.
+                            Each poem is paired with artwork because sometimes words aren't enough. Sometimes you need
+                            to see the feeling, not just read about it. This is what it looks like when someone tries
+                            to make sense of heartbreak, faith, and the mess of being human.
                         </p>
                     </section>
 
                     <section className="about-section">
                         <h2 className="about-title">The Creative Process</h2>
                         <p className="about-text">
-                            This collection represents years of introspection and artistic exploration. Each poem
-                            began as a moment of clarity or confusion, transformed through the lens of experience
-                            and time. The accompanying artwork serves not merely as illustration, but as an integral
-                            part of the storytelling process.
+                            I don't have a process. I have moments when the words won't stay inside anymore.
+                            I write them down, I paint what I can't say, and sometimes it makes sense later.
+                            Most of the time it doesn't, but that's okay. The art isn't in having it figured out—it's
+                            in the trying.
                         </p>
                     </section>
 
                     <section className="about-section">
                         <h2 className="about-title">Availability</h2>
                         <p className="about-text">
-                            <em>The Lucky Ones</em> is now available on Amazon Kindle and is compatible with the
-                            iOS Books Library. A second edition is currently in development, promising even more
-                            depth and artistic exploration.
+                            <em>The Lucky Ones</em> is on Amazon Kindle and works with iOS Books. I'm working on
+                            a second edition because apparently I still have more to say. Or maybe I'm just not done
+                            trying to get it right.
                         </p>
                         <div className="about-cta">
-                            <p className="cta-text">Experience the collection that has touched readers across the digital landscape.</p>
+                            <p className="cta-text">If any of this sounds familiar, maybe you're one of the lucky ones too.</p>
                         </div>
                     </section>
                 </div>

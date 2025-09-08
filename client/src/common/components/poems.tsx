@@ -9,7 +9,7 @@ import { NavbarViewModel } from "../navbar/navbarViewModel";
 import "../../App.css";
 
 export class PoemViewModel {
-    poemPreview: string = "Please enjoy some of my work.";
+    poemPreview: string = "Words I couldn't keep inside.";
     poems: Poem[] = poems;
 
     constructor() {

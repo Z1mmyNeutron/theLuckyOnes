@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { Component, useEffect, useRef } from "react";
 import { observer } from "mobx-react";
 import { NavbarViewModel } from "./navbarViewModel";
 import "../../App.css";
@@ -18,8 +18,24 @@ interface NavbarViewProps {
 
 @observer
 class NavbarView extends Component<NavbarViewProps, NavbarViewState> {
+    private shareDropdownRef = React.createRef<HTMLDivElement>();
+
     state: NavbarViewState = {
-        isCollapsed: true,
+        isCollapsed: false,
+    };
+
+    componentDidMount() {
+        document.addEventListener('click', this.handleClickOutside);
+    }
+
+    componentWillUnmount() {
+        document.removeEventListener('click', this.handleClickOutside);
+    }
+
+    handleClickOutside = (event: MouseEvent) => {
+        if (this.shareDropdownRef.current && !this.shareDropdownRef.current.contains(event.target as Node)) {
+            this.props.viewModel.closeShareDropdown();
+        }
     };
 
     handleClick = (url: string) => {
@@ -47,6 +63,11 @@ class NavbarView extends Component<NavbarViewProps, NavbarViewState> {
                         {isCollapsed ? "☰" : "✕"}
                     </button>
                     <div className={`navbar-content ${isCollapsed ? "collapsed" : "show"}`}>
+                        <div className="navbar-title">
+                            <button className="navbar-title-button" onClick={() => this.handleClick("/")}>
+                                {viewModel.name}
+                            </button>
+                        </div>
                         {viewModel.routes.map(route => (
                             <button key={route.name} onClick={() => this.handleClick(route.url)}>
                                 {route.name}
@@ -74,9 +95,35 @@ class NavbarView extends Component<NavbarViewProps, NavbarViewState> {
                                             onClick={() => viewModel.selectSearchResult(item)}
                                         >
                                             <div className="search-result-title">{item.title}</div>
-                                            <div className="search-result-type">{item.type}</div>
+                                            <div className="search-result-meta">
+                                                <span className="search-result-type">{item.section}</span>
+                                                <span className="search-result-preview">
+                                                    {item.content.substring(0, 80)}...
+                                                </span>
+                                            </div>
                                         </div>
                                     ))}
+                                </div>
+                            )}
+                        </div>
+                        <div className="share-container" ref={this.shareDropdownRef}>
+                            <button className="share-button" onClick={() => viewModel.toggleShareDropdown()}>
+                                📤
+                            </button>
+                            {viewModel.showShareDropdown && (
+                                <div className="share-dropdown">
+                                    <div className="share-dropdown-item" onClick={() => viewModel.shareToInstagram()}>
+                                        <span className="share-icon">📷</span>
+                                        <span>Instagram</span>
+                                    </div>
+                                    <div className="share-dropdown-item" onClick={() => viewModel.shareToPinterest()}>
+                                        <span className="share-icon">📌</span>
+                                        <span>Pinterest</span>
+                                    </div>
+                                    <div className="share-dropdown-item" onClick={() => viewModel.shareToTikTok()}>
+                                        <span className="share-icon">🎵</span>
+                                        <span>TikTok</span>
+                                    </div>
                                 </div>
                             )}
                         </div>
@@ -85,7 +132,6 @@ class NavbarView extends Component<NavbarViewProps, NavbarViewState> {
                         </button>
                     </div>
                 </div>
-                <NavbarHeader viewModel={viewModel} />
             </div>
         );
     }

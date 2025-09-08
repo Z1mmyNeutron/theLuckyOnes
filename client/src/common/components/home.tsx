@@ -13,7 +13,7 @@ const map = new Map([
 
     ["book6", require("../../assets/images/book6.jpg")],
 
-    ["book9", require("../../assets/images/book9.jpg")],
+    ["book9", require("../../assets/images/book9.jpeg")],
     ["book10", require("../../assets/images/book10.jpg")],
     ["book11", require("../../assets/images/book11.jpg")],
     ["book12", require("../../assets/images/book12.jpg")],
@@ -73,7 +73,7 @@ export class CardViewModel {
 }
 function RenderCardType(value: CardType, style: any) {
     if (map.has(value)) {
-        return <img style={style} src={map.get(value)} height={400} width={325} alt="Book cover" />
+        return <img style={{ ...style, width: '100%', height: '100%', objectFit: 'cover' }} src={map.get(value)} alt="Book cover" />
     }
     return <p style={{ ...style, padding: 10, }}>{value}</p>
 

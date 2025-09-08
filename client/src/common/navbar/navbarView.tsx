@@ -1,4 +1,4 @@
-import React, { Component, useEffect, useRef } from "react";
+import React, { Component } from "react";
 import { observer } from "mobx-react";
 import { NavbarViewModel } from "./navbarViewModel";
 import "../../App.css";
@@ -18,24 +18,8 @@ interface NavbarViewProps {
 
 @observer
 class NavbarView extends Component<NavbarViewProps, NavbarViewState> {
-    private shareDropdownRef = React.createRef<HTMLDivElement>();
-
     state: NavbarViewState = {
         isCollapsed: false,
-    };
-
-    componentDidMount() {
-        document.addEventListener('click', this.handleClickOutside);
-    }
-
-    componentWillUnmount() {
-        document.removeEventListener('click', this.handleClickOutside);
-    }
-
-    handleClickOutside = (event: MouseEvent) => {
-        if (this.shareDropdownRef.current && !this.shareDropdownRef.current.contains(event.target as Node)) {
-            this.props.viewModel.closeShareDropdown();
-        }
     };
 
     handleClick = (url: string) => {
@@ -103,27 +87,6 @@ class NavbarView extends Component<NavbarViewProps, NavbarViewState> {
                                             </div>
                                         </div>
                                     ))}
-                                </div>
-                            )}
-                        </div>
-                        <div className="share-container" ref={this.shareDropdownRef}>
-                            <button className="share-button" onClick={() => viewModel.toggleShareDropdown()}>
-                                📤
-                            </button>
-                            {viewModel.showShareDropdown && (
-                                <div className="share-dropdown">
-                                    <div className="share-dropdown-item" onClick={() => viewModel.shareToInstagram()}>
-                                        <span className="share-icon">📷</span>
-                                        <span>Instagram</span>
-                                    </div>
-                                    <div className="share-dropdown-item" onClick={() => viewModel.shareToPinterest()}>
-                                        <span className="share-icon">📌</span>
-                                        <span>Pinterest</span>
-                                    </div>
-                                    <div className="share-dropdown-item" onClick={() => viewModel.shareToTikTok()}>
-                                        <span className="share-icon">🎵</span>
-                                        <span>TikTok</span>
-                                    </div>
                                 </div>
                             )}
                         </div>

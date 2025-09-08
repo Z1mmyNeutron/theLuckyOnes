@@ -106,7 +106,7 @@ const PoemViewComponent: React.FC<{ viewModel: PoemViewModel; navbar: NavbarView
                                 onClick={() => toggleExpand(fullIndex)}
                                 className="expand-collapse-button"
                             >
-                                {expandedPoems[fullIndex] ? '−' : '+'}
+                                {expandedPoems[fullIndex] ? '×' : '⋯'}
                             </button>
                             <h3 className="poem-title">{poem.title}</h3>
                             <p className="poem-content" style={{

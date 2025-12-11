@@ -100,10 +100,10 @@ export class HomeViewModel {
     cardViewModels: CardViewModel[] = [
 
         new CardViewModel("book2", "The last time I light up a marbolo red was five years, six months, seven hours, three minutes and fifteen seconds ago. It smelled like you."),
-        new CardViewModel("book3", `I want to remember you as I used to, not as a prisoner during her great escape peering back over her shoulder as the alarm bells ring, wondering if she is going to be caught or if she has covered enough ground to put the past behind her. I want to remember you like you still love me.`),
+        new CardViewModel("book3", `I want to remember you as I used to, not as a prisoner during her great escape peering back over her shoulder... I want to remember you like you still love me.`),
         new CardViewModel("book4", "She was my savior, Jesus Christ found me later, no one else could dare replace her."),
 
-        new CardViewModel("book6", `"Sometimes all you truly need is your dawg" -Gandi, probably"`),
+        new CardViewModel("book6", `My hands aren't perfect but I never claimed they were clean, they're a product of promising myself a snake oil dream.`),
 
         new CardViewModel("book9", "We are two forgotten Gods that have lost their tempers. Seldom. Exclusive. Ancient. And yet we are a spectacle so bright that even the mere mortals mark their calendars."),
         new CardViewModel("book10", "Oh I adore you and denounce you at the same time, when I hold a mirror all your sins reflect mine."),
@@ -117,7 +117,7 @@ export class HomeViewModel {
         new CardViewModel("book18", "Stolen sunglasses cover pupils bigger than your promises, part of just wishes you were honest."),
         new CardViewModel("book19", "No, we have exchanged our egos for our evolution, and when I greet you this time, I do not say hello.This time I welcome you home."),
 
-        new CardViewModel("book22", "It won't matter in a moment, I gave them a warning; see they haven't me the monster I've been teaching conformance. If they thought love was too much, just wait for my next performance."),
+        new CardViewModel("book22", "It won't matter in a moment, I gave them a warning; see they haven't me the monster I've been teaching conformance."),
 
         new CardViewModel("book24", `Oh my darling, what a mess I've made. Corpses of mistakes rising up from their graves. If I could go back I'd ask Father Time, "Would you be happier if I never made you mine?"`),
         new CardViewModel("book25", `Have you yourself forgotten that you’re an angel walking amongst man?`),

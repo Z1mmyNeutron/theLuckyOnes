@@ -202,4 +202,39 @@ Maybe death is the final say and until then we’re okay and that just depends o
 
     `,
   },
+  {
+    title: "Twelve",
+    content: `This isn't pain it's too specific,
+     This isn't sorrow it's too prolific,
+     My hand's bracing the door while a skeleton key rattles inside, 
+     Still is is locked and I'm sitting in dust, where the ashes reside,
+     With all of the grief comes a flicker of hope,
+     and in that moment I hope that you choke,
+     on all of the promises that you couldn't keep 
+     and all of the sins I've sown it's now time to reap.
+
+     This is fury, this fight isn't fair,
+     this is dirty and wretched and my clothes start to tear,
+     This is penance or purgatory or peace,
+     This is calm in the chaos before the beast is unleashed.
+
+     This isn't a fable, no this plotline is real
+     and there's 26 ways it could go but which one of them is ideal?
+     I prayed to the Gods and asked them to listen,
+     but for all my devotion they just offered derision.
+
+     Bowed down to an alter my soul cut into shards
+     and with each love I cut loose there are pieces that scar.
+     My hands aren't perfect but I never claimed they were clean,
+     They're a product of promising myself a snake oil dream.
+
+     This isn't bloody, this isn't red, 
+     It's the calm in the night where nothing is said,
+     This isn't pretty and I'm not a page,
+     It's a series of chapters where luck takes the stage
+     And I'm not an actor, the mask cant come off
+     When the plotline derails still the show must go on. 
+    
+    `,
+  },
 ];

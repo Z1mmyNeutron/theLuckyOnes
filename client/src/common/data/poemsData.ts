@@ -237,4 +237,26 @@ Maybe death is the final say and until then we’re okay and that just depends o
     
     `,
   },
+  {
+    title: "Thirteen",
+    content: `I sat in my bed crying one night,
+a life full of hurt, betrayal and spite, 
+I asked God how on earth could this possibly be right? he answered quietly, do trust me? Then go outside. 
+
+So I gathered my coat to cover my skin, found the gloves I had been missing hanging by a pin, 
+donned a hat from my aunt- the wool hugging my ears, 
+and I closed the front door quietly shedding a tear. 
+
+The full moon beamed in the sky and it wasn’t a sun but it sure gave light, 
+the frost on the ground glittered quite bright, and for a second I thought “this might be alright”. 
+
+When I came back inside I knew what he meant, 
+love was here too from him he had sent, 
+it was in my neighbor opening a jar, 
+us laughing over quesadillas I made before he went to the bar, 
+it was in my moms eyes and her hands and her touch, 
+my dad saying he was proud- i didn’t tell him to hush, 
+and I was glad I didn’t give up when it all felt like too much. 
+When God calls, it’s important to trust.`,
+  },
 ];
